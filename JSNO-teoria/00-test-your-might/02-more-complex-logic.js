@@ -12,19 +12,22 @@
 
 function divideAync(a = 0, b = 1, collect = () => {}) {
  
-    if(b === 0) {
-        throw new Error("Cannot divide by 0")
-    }
-
     setTimeout(() => {
-        collect(a / b)
+
+        if(b === 0) {
+            return collect(new Error("Cannot divide by 0"), null)
+        }
+
+        collect(null, a / b)
     }, 3000)
 }
 
 
 
-divideAync(10, 2, (result) => {
-    console.log(result)
+divideAync(10, 2, (err, result) => {
+    if(!err) {
+        console.log(result)
+    }
 })
 
 /**
@@ -39,10 +42,19 @@ divideAync(10, 2, (result) => {
 
 // innymi słowy "jak poinformować Consumera, że coś poszło nie tak."
 
+// To nie zadziała, bo `throw` wewnątrz setTimeout będzie poza naszym `try/catch` 😢
 try {
-    divideAync(10, 0, (result) => {
+    divideAync(10, 0, (err, result) => {
         console.log(result)
     })
 } catch (e) {
     console.log(e.message)
 }
+
+// poprawnie obsługujemy błąd :
+divideAync(10, 0, (err, result) => {
+    if(err) {
+        return console.log(err.message);
+    }
+    console.log(result)
+})
