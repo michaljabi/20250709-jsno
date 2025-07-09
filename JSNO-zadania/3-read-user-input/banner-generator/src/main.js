@@ -1,7 +1,20 @@
 // @ts-check
 
+// CJS => CommonJS
 const readline = require('node:readline');
-const { stdin: input, stdout: output } = require('node:process');
+const process = require('node:process');
+
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring
+const { stdin: input, stdout } = process;
+// const stdin = process.stdin;
+// const stdout = process.stdout;
+
+/*
+// to samo ale ESM:
+import * as readline from 'node:readline';
+import { stdin as input, stdout as output } from 'node:process';
+*/
 
 console.log(`
 ****************************************
@@ -9,13 +22,24 @@ console.log(`
 ****************************************    
 `)
 
-const rl = readline.createInterface({ input, output });
+const rl = readline.createInterface({ 
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#property_definitions
+    input, // object property shorthand 
+    output: process.stdout 
+});
 
 
 rl.question('Podaj zdanie jakie chcesz zamienić w banner:', (answer = '') => {
 
   makeBanner(answer);
-  rl.close();
+//   rl.question('Podaj kolejne zdanie:', (answer = '') => {
+
+//     rl.question('Podaj jeszcze jedno zdanie:', (answer = '') => {
+
+//         rl.close();
+//     })
+
+//   })
 
 });
 

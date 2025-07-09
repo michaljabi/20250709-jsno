@@ -5,25 +5,20 @@
     <title>Moja strona</title>
 </head>
 <body>
-    <script>
-        var hello = 'Witaj świecie';
+    <script type="module">
+        let hello = 'Witaj świecie';
 
-        document.write(hello);
+        console.log(hello);
     </script>
-    <script>
-        var otherWorld = 'Inny świat'
+    <script type="module">
+        /// ESM (Ecma Script Modules)
+        import $ from 'https://esm.sh/jquery'
 
-        document.write('<br>')
-        document.write(otherWorld)
-    </script>
-    <script>
-	    document.write('<br>')
-        // Tutaj wypisz jeszcze raz wartość hello
-    </script>
-    <script>
-        var otherWorld = 'Jestem cieniem 😱'
-        document.write('<br>')
-        // Tutaj wypisz wartość otherWorld
+        let hello = 'Witaj świecie 2';
+
+        console.log(hello);
+
+        $(document.body).html('hello from jQuery')
     </script>
 </body>
 </html>
