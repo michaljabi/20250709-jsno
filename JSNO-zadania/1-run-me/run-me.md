@@ -7,3 +7,9 @@ Pomocna dłoń:
 
 - [run app from command line](https://nodejs.org/en/learn/command-line/run-nodejs-scripts-from-the-command-line)
 - [VSC open in Terminal](https://code.visualstudio.com/docs/terminal/basics#_open-in-terminal)
+
+
+Rozwiązanie:
+```
+node mistery-file.js
+```
