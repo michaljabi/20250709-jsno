@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start:prod": "node src/server.js",
-    "start": "nodemon -e js,json,hbs src/server.js"
+    "start": "nodemon -e js,json,ejs src/server.js"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
