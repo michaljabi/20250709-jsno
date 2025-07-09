@@ -3,9 +3,12 @@
     <div>
         <a href="/">Powrót</a>
     </div>
+    <% if(model.error) { %>
+        <div class="alert alert--danger" ><%=model.error%></div>
+    <% } %>
     <ul>
         <% for(const task of model.tasks) { %>
-            <li>(<%= task.id %>) <%= task.title %></li>
+            <li>(<%= task.id %>) <%= task.title %> ?</li>
         <% } %>
     </ul>
 </div>

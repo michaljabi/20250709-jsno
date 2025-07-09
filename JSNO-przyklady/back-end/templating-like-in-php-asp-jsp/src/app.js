@@ -57,9 +57,10 @@ app.get('/tasks', async (req, res) => {
 	if(req.session.user) {
 		try {
 			const tasks = await dbConnection.getTasks();
+			// throw new Error('Oh no !')
 			res.render('tasks', {model: { tasks  }});
 		} catch (e) {
-			res.render('tasks', {model: { error: e.message  }});
+			res.render('tasks', {model: { error: e.message, tasks: []  }});
 		}
 	} else {
 		res.redirect('/');
