@@ -1,0 +1,9 @@
+# Dzięki plikom `.http` możesz testować endpointy HTTP bezpośrednio z edytora kodu.
+# W uruchomieniu tych plików pomoże Ci rozszerzenie "REST Client" w Visual Studio Code.
+
+### Sprawdzanie działania endpointu /data
+GET http://localhost:3035/data
+
+
+### Sprawdzanie działania nieistniejącego endpointu
+GET http://localhost:3035/datazz
