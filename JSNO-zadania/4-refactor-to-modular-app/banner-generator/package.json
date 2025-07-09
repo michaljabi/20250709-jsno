@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/main.js",
-    "start:dev": "nodemon ./src/main.js",
+    "banner": "node ./src/main.js",
+    "start": "nodemon ./src/main.js",
     "test": "echo hello world"
   },
   "keywords": [],

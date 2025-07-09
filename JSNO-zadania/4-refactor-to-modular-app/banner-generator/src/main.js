@@ -13,6 +13,8 @@ const rl = createInterface({
 
 rl.question("Podaj zdanie jakie chcesz zamienić w banner:", (answer = "") => {
   makeBanner(answer);
+  rl.close();
 });
+
 
 
