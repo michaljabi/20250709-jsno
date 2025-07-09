@@ -1,12 +1,12 @@
 // @ts-check
 
-const readline = require("node:readline");
-const { stdin: input, stdout: output } = require("node:process");
-const { makeBanner, wrapWithBorder } = require('./make-banner')
+import { createInterface } from "node:readline";
+import { stdin as input, stdout as output } from "node:process";
+import { makeBanner, wrapWithBorder } from './make-banner.js';
 
 wrapWithBorder("WITAJ W GENERATORZE BANNERÓW [!]")
 
-const rl = readline.createInterface({
+const rl = createInterface({
   input,
   output,
 });
