@@ -2,7 +2,7 @@
 // Możemy korzystać z dobroci ES11 w Node > 14.
 // W tym układzie, słowo kluczowe class i domyślne parametry funkcji oraz template string — zadziałają,
 // ponieważ zostały wprowadzone już w ES6 (2015)
-export class Car {
+export default class Car {
 
 	constructor (name = 'Audi', model = 'A8') {
 		this.name = name;
@@ -13,3 +13,6 @@ export class Car {
 		console.log( `Wroom, wroom... ${this.name} ${this.model}` );
 	}
 }
+
+export const many = 'test';
+export const things = 22;
