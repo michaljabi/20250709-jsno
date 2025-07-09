@@ -6,14 +6,19 @@ const PADDING = 4;
 function makeBanner(sentence) {
   const words = sentence.toUpperCase().split(" ");
   for (const word of words) {
-    const line = "*".repeat(word.length + PADDING);
+    wrapWithBorder(word);
+  }
+}
+
+function wrapWithBorder(word) {
+const line = "*".repeat(word.length + PADDING);
     console.log(`${line}
 * ${word} *
-${line}`);
-  }
+${line}`);    
 }
 
 
 module.exports = {
-    makeBanner: makeBanner 
+    makeBanner,
+    wrapWithBorder
 }

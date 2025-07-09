@@ -2,13 +2,9 @@
 
 const readline = require("node:readline");
 const { stdin: input, stdout: output } = require("node:process");
-const { makeBanner } = require('./make-banner')
+const { makeBanner, wrapWithBorder } = require('./make-banner')
 
-console.log(`
-****************************************
-*   WITAJ W GENERATORZE BANNERÓW [!]   *
-****************************************    
-`);
+wrapWithBorder("WITAJ W GENERATORZE BANNERÓW [!]")
 
 const rl = readline.createInterface({
   input,
