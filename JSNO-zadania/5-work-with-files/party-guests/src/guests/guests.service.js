@@ -1,8 +1,8 @@
 import path from 'node:path'
 import crypto from 'node:crypto'
-import { jsonFileService } from './json-file.service.js';
+import { jsonFileService } from '../shared/json-file.service.js';
 
-const filePath = path.join(import.meta.dirname, '..', 'guests.json')
+const filePath = path.join(import.meta.dirname, '../json-db/guests.json')
 
 let guests = [];
 let nextId = 1;

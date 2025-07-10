@@ -1,4 +1,4 @@
-import { guestsService } from './guests.service.js';
+import { guestsService } from './guests/guests.service.js';
 
 try {
     await guestsService.initData();
