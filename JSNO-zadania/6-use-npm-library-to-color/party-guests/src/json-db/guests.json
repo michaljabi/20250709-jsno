@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "uuid": "123e4567-e89b-12d3-a456-426614174000",
+    "name": "Anna",
+    "lastName": "Nowak",
+    "status": "confirmed",
+    "updatedAt": "2025-07-08T12:00:00Z"
+  },
+  {
+    "id": 2,
+    "uuid": "123e4567-e89b-12d3-a456-426614174001",
+    "name": "Jan",
+    "lastName": "Kowalski",
+    "status": "invited",
+    "updatedAt": "2025-07-08T13:00:00Z"
+  },
+  {
+    "id": 3,
+    "uuid": "123e4567-e89b-12d3-a456-426614174002",
+    "name": "Maria",
+    "lastName": "Wiśniewska",
+    "status": "declined",
+    "updatedAt": "2025-07-08T14:00:00Z"
+  },
+  {
+    "id": 4,
+    "name": "Barbara",
+    "lastName": "Gordon",
+    "status": "invited",
+    "uuid": "dca3263d-3a2e-4b9e-b24b-edb66fb8ec37",
+    "updatedAt": "2025-07-10T08:47:41.592Z"
+  },
+  {
+    "id": 5,
+    "name": "Jan",
+    "lastName": "Kowalski",
+    "status": "invited",
+    "uuid": "2c8834be-32b7-41d0-b466-90d1131066ac",
+    "updatedAt": "2025-07-10T09:47:33.057Z"
+  }
+]
