@@ -22,5 +22,21 @@
     "lastName": "Wiśniewska",
     "status": "declined",
     "updatedAt": "2025-07-08T14:00:00Z"
+  },
+  {
+    "id": 4,
+    "name": "Barbara",
+    "lastName": "Gordon",
+    "status": "invited",
+    "uuid": "dca3263d-3a2e-4b9e-b24b-edb66fb8ec37",
+    "updatedAt": "2025-07-10T08:47:41.592Z"
+  },
+  {
+    "id": 5,
+    "name": "Barbara",
+    "lastName": "Gordon",
+    "status": "invited",
+    "uuid": "93ace67d-186c-4288-be4e-0930b120340f",
+    "updatedAt": "2025-07-10T08:54:35.436Z"
   }
 ]
