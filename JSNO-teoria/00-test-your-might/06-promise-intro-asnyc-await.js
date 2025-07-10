@@ -51,7 +51,7 @@ try {
 
 
 // Jak nie było top level await:
-async function run() {
+async function run() { // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function
     await giveMeTheNumber2();
 }
 run();
@@ -59,7 +59,7 @@ run();
 // JS koncept: IIFE (Immediately Invoked Function Expression)
 // https://developer.mozilla.org/en-US/docs/Glossary/IIFE
 
-const r = async function() {
+const r = async function() { // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function
      await giveMeTheNumber2();
 }
 
