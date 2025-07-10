@@ -8,7 +8,9 @@
 const path = require('path');
 const fs = require('fs/promises'); // zwróć uwagę na /promises - importujemy inny "rodzaj" biblioteki fs.
 
-const logFilePath = path.resolve(__dirname, 'program.log');
+console.log(__dirname);
+
+const logFilePath = path.join(__dirname, 'program.log');
 fs.access(logFilePath)
 	.then(() => {
 		 return fs.readFile(logFilePath, 'utf8').then(data => data.split('\n').length)
@@ -19,5 +21,5 @@ fs.access(logFilePath)
 		return fs.writeFile(logFilePath, info, {flag: 'a'})
 	})
 	.catch(err => {
-		console.error('Wystąpił błąd...', err)
+		console.log('Wystąpił błąd...', err.message)
 	})
