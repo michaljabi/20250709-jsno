@@ -9,7 +9,7 @@ function giveMeTheNumber() {
     return Promise.resolve(300)
 }
 
-await sth();
+// await sth();
 /**
  * 1
  *
