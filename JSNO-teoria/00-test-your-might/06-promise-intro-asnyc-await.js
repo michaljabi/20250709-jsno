@@ -5,8 +5,8 @@
  * przepisz na async / await
  */
 
-function giveMeTheNumber() {
-    return Promise.resolve(300)
+async function giveMeTheNumber() {
+    return 300
 }
 
 /**
@@ -15,13 +15,22 @@ function giveMeTheNumber() {
  * Poniżej odbierz liczbę 300 i pokaż ją na ekranie:
  * */ 
 
-giveMeTheNumber().then(num => {
+// giveMeTheNumber().then(num => {
+//     console.log(num);
+// })
+
+const num = await giveMeTheNumber();
+console.log(num);
+
+// CONSUMER #3 (odbierz po 2 sec)
+setTimeout(async () => {
+
+    const num = await giveMeTheNumber();
     console.log(num);
-})
+}, 2000)
 
-
-function giveMeTheNumber2() {
-    return Promise.reject(456)
+async function giveMeTheNumber2() {
+    throw 456
 }
 
 /**
@@ -30,6 +39,39 @@ function giveMeTheNumber2() {
  * Poniżej odbierz liczbę 456 i pokaż ją na ekranie:
  * */ 
 
-giveMeTheNumber2().catch(num => {
+// giveMeTheNumber2().catch(num => {
+//     console.log(num);
+// })
+
+try {
+    await giveMeTheNumber2();
+} catch (num) {
     console.log(num);
-})
+}
+
+
+// Jak nie było top level await:
+async function run() {
+    await giveMeTheNumber2();
+}
+run();
+
+// JS koncept: IIFE (Immediately Invoked Function Expression)
+// https://developer.mozilla.org/en-US/docs/Glossary/IIFE
+
+const r = async function() {
+     await giveMeTheNumber2();
+}
+
+;(async function() {
+     await giveMeTheNumber2();
+})();
+
+;(async () => {
+     await giveMeTheNumber2();
+})();
+
+// alter:
+;(async function () {
+     await giveMeTheNumber2();
+}());
