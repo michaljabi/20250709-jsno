@@ -7,7 +7,8 @@ export async function seed(knex) {
           name: 'Anna',
           lastName: 'Nowak',
           status: 'confirmed',
-          updatedAt: '2025-07-08T12:00:00Z'
+          updatedAt: '2025-07-08T12:00:00Z',
+          email: 'anna@nowak.com'
       },
       {
           id: 2,

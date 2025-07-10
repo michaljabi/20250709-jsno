@@ -6,7 +6,7 @@ import { guestsService} from './guests/guests.service.js'
 // console.table(data)
 
 try {
-    const newId = await guestsService.addGuest('Jan', 'Kowalski');
+    const newId = await guestsService.addGuest('Janina', 'Kowalska', 'janina@gmail.com');
 
     console.log('NEW RECORD', newId)
     console.table(await guestsService.getAll())
