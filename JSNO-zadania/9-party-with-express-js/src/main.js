@@ -8,6 +8,16 @@ const app = express();
 
 app.use(express.json());
 
+app.use((req, res, next) => {
+    const auth =  req.headers['authorization'] 
+    if(!auth) {
+        // throw new ServerError('You shall not pass', 403)
+        return next(new ServerError('You shall not pass', 403))
+    }
+    // res.send({ hey: 'troll' })
+    next();
+})
+
 app.all('/', (req, res) => {
     res.send({ hello: 'World' }) //.status(404)
 })
@@ -35,6 +45,10 @@ app.post('/guests', async (req, res) => {
     const newGuest = guestsInMemoryDb.addGuest(body.name, body.lastName || '')
 
     res.status(201).send(newGuest)
+})
+
+app.all('/{*splat}', (req, res) => {
+	res.send({ error: `Cannot find page ${req.url} for method ${req.method}` });
 })
 
 app.use((err, req, res, next) => {
