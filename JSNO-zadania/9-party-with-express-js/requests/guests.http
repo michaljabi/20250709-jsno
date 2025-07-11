@@ -13,6 +13,11 @@ GET http://localhost:4545/guests?status=confirmed
 GET http://localhost:4545/guests?status=declined
 
 
+### GET 2nd user
+
+GET http://localhost:4545/guests/2
+
+
 ### Add new guest HAPPY PATH
 
 POST http://localhost:4545/guests
