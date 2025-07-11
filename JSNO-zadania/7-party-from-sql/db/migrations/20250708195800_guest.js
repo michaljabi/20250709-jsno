@@ -7,7 +7,7 @@ export async function up(knex) {
         table.increments('id').primary();
         table.uuid('uuid').notNullable().unique();
         table.string('name').notNullable();
-        table.string('last_name');
+        table.string('last_name'); // lastName -> to robi ten case mapper  (ze snake_case do camelCase)
         table.enu('status', ['confirmed', 'invited', 'declined']).notNullable();
         table.timestamps(false, true)
     });

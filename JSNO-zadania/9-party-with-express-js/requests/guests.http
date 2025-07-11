@@ -30,3 +30,8 @@ POST http://localhost:4545/guests
 Content-Type: application/json
 
 {}
+
+### Usuń gościa o id 90
+
+DELETE http://localhost:4545/guests/90
+Authorization: Barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30
