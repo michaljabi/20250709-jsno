@@ -1,0 +1,18 @@
+### GET on homepath /
+
+GET http://localhost:4545/
+
+
+### Send something to homepath /
+
+POST http://localhost:4545/
+Content-Type: application/json
+
+{
+    "say": "hi!"
+}
+
+
+
+### DEL something from homepath /
+DELETE  http://localhost:4545/

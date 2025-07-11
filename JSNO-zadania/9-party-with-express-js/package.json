@@ -1,0 +1,22 @@
+{
+  "name": "9-party-with-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "scripts": {
+    "start": "env-cmd node ./src/main.js",
+    "start:dev": "env-cmd nodemon ./src/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "consola": "^3.4.2",
+    "env-cmd": "^10.1.0",
+    "express": "^5.1.0"
+  }
+}
