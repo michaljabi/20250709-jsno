@@ -1,6 +1,7 @@
 import express from 'express';
 import { env } from 'node:process'
 import { guestsInMemoryDb } from '../db/guests-in-memory-db.js'
+import { ServerError } from './shared/server-error.js';
 
 const { PORT } = env;
 const app = express();
@@ -27,7 +28,7 @@ app.post('/guests', async (req, res) => {
     const { body } = req;
     // walidacja payloadu.... 
     if(!body.name) {
-        throw new Error('Name of the guest is required')
+        throw new ServerError('Name of the guest is required')
         // return res.status(400).send({ error: 'Name of the guest is required' })
     }
 
@@ -39,7 +40,11 @@ app.post('/guests', async (req, res) => {
 app.use((err, req, res, next) => {
 
      console.error(err)
-     res.status(400).send({error: err.message })
+     let status = 500;
+     if(err instanceof ServerError) {
+        status = err.status
+     } 
+     res.status(status).send({error: err.message })
 })
 
 app.listen(PORT, () => {
