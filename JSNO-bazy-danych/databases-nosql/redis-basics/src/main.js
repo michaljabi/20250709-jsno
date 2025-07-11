@@ -6,6 +6,7 @@ redis.get("myUser").then(user => {
 		const user = {name: 'Kasia', email: 'kasia@example.com', id: 1};
 		console.log('Nie odnaleziono danych w myUser')
 		console.log('Wpisuje nową wartość:', user)
+		
 		redis
 			.set("myUser", JSON.stringify(user))
 			.then((value) => {
