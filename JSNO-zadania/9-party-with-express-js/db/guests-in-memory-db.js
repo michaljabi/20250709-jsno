@@ -30,6 +30,18 @@ export const guestsInMemoryDb = {
     async getAll() {
         return guests
     },
+    addGuest(name, lastName) {
+        const guest = {
+                    id: Math.max(...guests.map(({id}) => id)) + 1,
+                    name, 
+                    lastName,
+                    status: 'invited',
+                    uuid: crypto.randomUUID(),
+                    updatedAt: new Date()
+                }
+        guests.push(guest);
+        return guest;
+    },
     async getById(id) {
         return guests.find(guest => guest.id === id)
     },

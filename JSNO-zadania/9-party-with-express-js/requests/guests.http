@@ -11,3 +11,22 @@ GET http://localhost:4545/guests?status=confirmed
 ### GET only declined guests
 
 GET http://localhost:4545/guests?status=declined
+
+
+### Add new guest HAPPY PATH
+
+POST http://localhost:4545/guests
+Content-Type: application/json
+
+{
+    "name": "Barbara2",
+    "lastName": "Gordon"
+}
+
+
+### Add new guest SAD PATH (missing name)
+
+POST http://localhost:4545/guests
+Content-Type: application/json
+
+{}
