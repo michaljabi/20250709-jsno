@@ -10,12 +10,13 @@ app.all('/', (req, res) => {
 })
 
 app.get('/guests', async (req, res) => {
-    console.log(req.query)
-    const { status } = req.query;
-    if(status) {
-        return res.send(await guestsInMemoryDb.getByStatus(status))
-    }
-    res.send(await guestsInMemoryDb.getAll())
+    // console.log(req.query)
+    const { status = '' } = req.query;
+    // if(status) {
+    //     return res.send(await guestsInMemoryDb.getByStatus(status))
+    // }
+    // res.send(await guestsInMemoryDb.getAll())
+     res.send(await guestsInMemoryDb.getByStatus(status))
 })
 
 // app.post('/', (req, res) => {

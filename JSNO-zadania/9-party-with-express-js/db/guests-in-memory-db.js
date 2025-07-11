@@ -33,7 +33,10 @@ export const guestsInMemoryDb = {
     async getById(id) {
         return guests.find(guest => guest.id === id)
     },
-    async getByStatus(status) {
-        return guests.filter(guest => guest.status === status)
+    async getByStatus(status = '') {
+        return guests.filter(guest => guest.status.startsWith(status))
     }
 }
+
+
+// await guestsInMemoryDb.getAll();
