@@ -25,9 +25,10 @@ app.post('/guests', async (req, res) => {
     console.log(req.body)
 
     const { body } = req;
-    // TODO: walidacja payloadu.... 
+    // walidacja payloadu.... 
     if(!body.name) {
-        throw new Error('Name of the guest is qequired')
+        throw new Error('Name of the guest is required')
+        // return res.status(400).send({ error: 'Name of the guest is required' })
     }
 
     const newGuest = guestsInMemoryDb.addGuest(body.name, body.lastName || '')
@@ -35,9 +36,11 @@ app.post('/guests', async (req, res) => {
     res.status(201).send(newGuest)
 })
 
-// app.post('/', (req, res) => {
-//     res.status(404).send({ hello: 'post' })
-// })
+app.use((err, req, res, next) => {
+
+     console.error(err)
+     res.status(400).send({error: err.message })
+})
 
 app.listen(PORT, () => {
     console.log(`Nasłuchuje na porcie: ${PORT}`)
