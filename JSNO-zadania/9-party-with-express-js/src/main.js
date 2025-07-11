@@ -2,23 +2,12 @@ import express from 'express';
 import { env } from 'node:process'
 import { guestsInMemoryDb } from '../db/guests-in-memory-db.js'
 import { ServerError } from './shared/server-error.js';
+import { authMiddleware } from './shared/auth.middleware.js';
 
-const { PORT, AUTH_SECRET } = env;
+const { PORT } = env;
 const app = express();
 
 app.use(express.json());
-
-const authMiddleware = (req, res, next) => {
-    const auth = req.headers['authorization'] 
-    if(!auth) {
-        return next(new ServerError('Unauthorized', 401))
-    }
-    if(auth !== AUTH_SECRET) {
-        // throw new ServerError('You shall not pass', 403)
-        return next(new ServerError('You shall not pass', 403))
-    }
-    next();
-}
 
 app.all('/users', authMiddleware, (req, res) => {
     res.send([])
