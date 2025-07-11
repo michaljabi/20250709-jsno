@@ -7,3 +7,7 @@ GET http://localhost:3035/data
 
 ### Sprawdzanie działania nieistniejącego endpointu
 GET http://localhost:3035/datazz
+
+
+### Sprawdzanie działania innej metody
+POST http://localhost:3035/datazz2
