@@ -1,0 +1,14 @@
+### shall not pass
+
+GET http://localhost:4545/users
+
+
+### shall not pass
+
+GET http://localhost:4545/users
+Authorization: qwertyuio
+
+### should be ok
+
+GET http://localhost:4545/users
+Authorization: s3cret-k3y
