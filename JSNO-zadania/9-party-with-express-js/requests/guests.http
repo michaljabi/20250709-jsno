@@ -1,0 +1,13 @@
+### GET all guests
+
+GET http://localhost:4545/guests
+
+
+### GET only confirmed guests
+
+GET http://localhost:4545/guests?status=confirmed
+
+
+### GET only declined guests
+
+GET http://localhost:4545/guests?status=declined

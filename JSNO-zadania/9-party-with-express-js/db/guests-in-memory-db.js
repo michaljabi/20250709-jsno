@@ -26,7 +26,7 @@ const guests = [
 ]
 
 
-export const questInMemoryDb = {
+export const guestsInMemoryDb = {
     async getAll() {
         return guests
     },
