@@ -4,8 +4,18 @@ import { join } from 'path';
 import { jsonFileService } from './shared/json-file.service.js';
 // import data from './data.json' with { type: 'json' }
 
+import pino from 'pino'
 
-const { PORT = 4000 } = process.env;
+
+const { PORT = 4000, LOG_LEVEL = 'trace' } = process.env;
+
+const logger = pino({
+    level: LOG_LEVEL,
+    transport: {
+        target: 'pino-pretty'
+    }
+})
+
 
 const server = createServer(async (req, res) => {
 
@@ -18,12 +28,12 @@ const server = createServer(async (req, res) => {
             res.statusCode = 200
             const data = await jsonFileService.getDataFrom(join(import.meta.dirname, './data.json'));
             res.write(JSON.stringify(data))
-            console.log('Data requested', req.headers)
+            logger.info('Data requested %o', req.headers)
             break;
         default:
             res.statusCode = 404
             res.write(JSON.stringify({ "error": `404 - nie znam ścieżki ${req.url}`  }))
-            console.warn(`404 not found ${req.url}`, req.headers)
+            logger.warn(`404 not found ${req.url} %o`, req.headers)
     }
 
     res.end();
@@ -33,6 +43,7 @@ server.listen(PORT)
 
 server.on('listening', () => {
     console.log(`jestem... na procie: ${PORT}`)
+    console.log(`poziom logowania: ${LOG_LEVEL}`)
 })
 
 // side-quest: obsługa błędów
