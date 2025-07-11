@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/server.js",
-    "start:dist": "node src/server.js"
+    "start": "nodemon --env-file=.env src/server.js",
+    "start:dist": "node --env-file=.env src/server.js"
   },
   "keywords": [],
   "author": "",
